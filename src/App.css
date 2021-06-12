@@ -1,38 +1,83 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(to bottom, black, purple,white);
+}
+
+.main-heading {
+  position: absolute;
+  top:2em;
+  right:0;
+  left: 0;
+  margin: auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heading {
+  color:white;
+  font-size: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.underline {
+  text-align: center;
+  margin-top:0.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.google,
+.facebook {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  width:fit-content;
+  height: 4em;
+  background-color: white;
+  padding:0 2em;
+  border-radius: 40px;
+  gap: 1em;
+  cursor: pointer;
+  transition: 0.5s;
+  background-image: url('./assets/svgs/Rectangle\ 19.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: top 4em left 0em;
+}
+
+.google:hover,
+.facebook:hover {
+  transform: scale(1.1);
+  background-position: top 0em left 0em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.google-icon,
+.facebook-icon {
+  transition: 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.google-icon:hover,
+.facebook-icon:hover {
+  transform: scale(1.1);
+}
+
+.facebook {
+  margin-top: 2em;
+}
+
+.sign-up-svg {
+  position: absolute;
+  bottom:0;
+  left:0;
+}
+
+@media screen and (max-width:1033px) {
+  .sign-up-svg>.social-image{
+    width:60%;
   }
 }

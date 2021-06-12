@@ -1,0 +1,74 @@
+.homepage {
+    height: 100vh;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(to bottom, #030D62, purple, black);
+}
+
+.homepage > .welcome {
+    width:30em;
+    height:10em;
+    position:absolute;
+    top:2em;
+}
+
+.user-card {
+    min-width: fit-content;
+    height: 18em;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:0 2em;
+    border-radius: 20px;
+    margin-top:15em;
+    position: relative;
+}
+
+.user-card > .user-profile-pic {
+    width:5em;
+    height: 5em;
+    border-radius: 50%;
+    position: absolute;
+    top: -2.5em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid black;
+}
+
+.user-card > * {
+    transform-style: preserve-3d;
+    transform: translateZ(10em);
+}
+
+.user-name {
+    margin-bottom: 2em;
+}
+
+
+.user-name:hover,
+.user-email:hover,
+.user-profile-pic:hover {
+    transform: translateZ(10em);
+    text-shadow: 5px 5px 15px rgb(245, 2, 245);
+}
+
+@media screen and (max-width:540px) {
+    .user-name h1,
+    .user-email h1 {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width:425px) {
+    .user-name h1,
+    .user-email h1 {
+        font-size: 1rem;
+    }
+    .user-card > .user-profile-pic {
+        width:4em;
+        height: 4em;
+        top: -2em;
+    }
+}
