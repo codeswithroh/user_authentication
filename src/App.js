@@ -1,5 +1,5 @@
-import React from 'react';
-import {useHistory} from 'react-router-dom';
+import React from "react";
+import { useHistory } from "react-router-dom";
 import "./App.css";
 import underline from "./assets/svgs/underline.svg";
 import social from "./assets/svgs/social.svg";
@@ -9,9 +9,21 @@ import firebase from "firebase";
 import fire from "./config/fire";
 
 function App() {
-  let history= useHistory();
+  let history = useHistory();
   const GoogleSignIn = (e) => {
     var provider = new firebase.auth.GoogleAuthProvider();
+    fire
+      .auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        history.push("./home");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const FacebookSignIn = (e) => {
+    var provider = new firebase.auth.FacebookAuthProvider();
     fire
       .auth()
       .signInWithPopup(provider)
@@ -38,7 +50,7 @@ function App() {
           </div>
           <div className='google-text'>Sign Up With Google</div>
         </div>
-        <div className='facebook'>
+        <div className='facebook' onClick={(e) => FacebookSignIn(e)}>
           <div className='facebook-icon'>
             <img src={facebook} alt='facebook'></img>
           </div>
