@@ -41,6 +41,7 @@
 .user-card > * {
     transform-style: preserve-3d;
     transform: translateZ(10em);
+    -webkit-perspective: 1000;
 }
 
 .user-name {
@@ -52,7 +53,9 @@
 .user-email:hover,
 .user-profile-pic:hover {
     transform: translateZ(10em);
-    text-shadow: 5px 5px 15px rgb(245, 2, 245);
+    -webkit-transform: scale(1.3);
+    -moz-transform: translateZ(10em);
+    text-shadow: 5px 5px 5px rgb(2, 209, 245);
 }
 
 @media screen and (max-width:540px) {
